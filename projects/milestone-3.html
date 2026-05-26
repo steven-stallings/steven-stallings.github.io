@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milestone 3 — AES-CBC Decryption via CyberChef | Steven Stallings</title>
+<meta name="description" content="CYBR 4843 Ethical Hacking — decrypting an AES-256-CBC ciphertext in CyberChef after diagnosing a wrong-IV partial decryption.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--bg-alt:#11161d;--surface:#161b22;--surface-2:#1c232c;
+  --border:#27303b;--border-bright:#39414d;--text:#e6edf3;--text-dim:#8b949e;
+  --text-faint:#6e7681;--green:#39d353;--green-dim:#2ea043;--blue:#58a6ff;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter',sans-serif;--maxw:880px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(57,211,83,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(57,211,83,.022) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;z-index:0}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+::selection{background:rgba(57,211,83,.3);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;background:rgba(13,17,23,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{font-family:var(--mono);font-weight:600;font-size:14px}
+.logo .prompt{color:var(--green)}
+.back{font-family:var(--mono);font-size:13px;color:var(--text-dim)}
+.back:hover{color:var(--green);text-decoration:none}
+header.hero{padding:64px 0 40px}
+.crumb{font-family:var(--mono);font-size:12.5px;color:var(--text-faint);margin-bottom:18px}
+.crumb .green{color:var(--green)}
+.tag-course{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--green);border:1px solid var(--green-dim);border-radius:5px;padding:4px 11px;margin-bottom:18px}
+h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.lead{font-size:18px;color:var(--text-dim);max-width:680px}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font-family:var(--mono);font-size:12px;padding:5px 12px;background:var(--surface);border:1px solid var(--border-bright);border-radius:6px;color:var(--blue)}
+.result-banner{margin:36px 0;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:8px;padding:20px 22px}
+.result-banner .label{font-family:var(--mono);font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.result-banner .val{font-family:var(--mono);font-size:18px;color:var(--green);font-weight:600}
+section.body{padding:20px 0 40px}
+h2{font-size:22px;font-weight:700;margin:40px 0 14px;letter-spacing:-.3px}
+h2 .hash{color:var(--green);font-family:var(--mono);font-weight:500}
+p.story{font-size:16px;color:#c9d1d9;margin-bottom:18px}
+.config-list{margin:18px 0;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 22px}
+.config-list .row{display:flex;gap:14px;font-family:var(--mono);font-size:13.5px;padding:6px 0;border-bottom:1px solid var(--border)}
+.config-list .row:last-child{border-bottom:none}
+.config-list .k{color:var(--text-faint);min-width:90px}
+.config-list .v{color:var(--green)}
+.step{margin:34px 0}
+.step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.step-num{font-family:var(--mono);font-size:12px;color:var(--green);background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:3px 9px;flex-shrink:0}
+.step-cap{font-size:14.5px;color:var(--text-dim)}
+.shot{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#000;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.shot img{display:block;width:100%;height:auto}
+.tools-box{margin:40px 0;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px}
+.tools-box h3{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:14px}
+.tools-box .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.tools-box .t{font-family:var(--mono);font-size:13px;color:var(--text-dim);padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px}
+.skills-line{font-family:var(--mono);font-size:13px;color:var(--text-dim);margin-top:16px}
+.skills-line .green{color:var(--green)}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;margin:40px 0;padding-top:28px;border-top:1px solid var(--border)}
+.btn{font-family:var(--mono);font-size:13.5px;padding:11px 18px;border-radius:7px;border:1px solid var(--border-bright);color:var(--text);transition:.18s}
+.btn:hover{border-color:var(--green);color:var(--green);text-decoration:none}
+.btn.primary{background:var(--green);color:#06210d;border-color:var(--green);font-weight:600}
+.btn.primary:hover{background:#46e862;color:#06210d}
+footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
+.foot-term{font-family:var(--mono);font-size:12.5px;color:var(--text-faint)}
+.foot-term .green{color:var(--green)}
+@media(max-width:640px){.lead{font-size:16px}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="../index.html"><span class="prompt">stallings@sec</span>:~$</a>
+  <a class="back" href="../index.html">cd ../</a>
+</nav>
+<header class="hero wrap">
+  <div class="crumb"><span class="green">~</span>/projects/milestone-3</div>
+  <div class="tag-course">CYBR 4843 · Ethical Hacking · Milestone 3</div>
+  <h1>AES-CBC Decryption via CyberChef</h1>
+  <p class="lead">Decrypt an AES-256-CBC ciphertext by getting the key, IV, mode, and encoding right. I diagnosed a partial decryption caused by a wrong IV and corrected it to recover the message.</p>
+  <div class="meta-row">
+    <span class="chip">CyberChef</span>
+    <span class="chip">AES-256-CBC</span>
+    <span class="chip">IV debugging</span>
+    <span class="chip">Cryptography</span>
+  </div>
+</header>
+<div class="wrap">
+  <div class="result-banner">
+    <div class="label"># decrypted plaintext</div>
+    <div class="val">The angels have the phonebox!!!</div>
+  </div>
+</div>
+<section class="body wrap">
+
+  <h2><span class="hash">#</span> Approach</h2>
+  <p class="story">I first tried to crack this with OpenSSL and it did not go my way, so after exhausting those attempts I switched to CyberChef, where it was relatively straightforward. I chose AES Decrypt, added emessage.etxt as the input file, and added AES_key_.aes as the key in UTF8.</p>
+  <p class="story">For the IV I initially used 16 pairs of "10" to get me to 32 characters, but that only produced a partial decryption and a garbled mess. I diagnosed that the IV was the problem, reset it to 32 zeros, and that worked. With the mode set to CBC and the input and output set to Raw, the output revealed: "The angels have the phonebox!!!"</p>
+
+  <h2><span class="hash">#</span> Final configuration</h2>
+  <div class="config-list">
+    <div class="row"><span class="k">Operation</span><span class="v">AES Decrypt</span></div>
+    <div class="row"><span class="k">Key</span><span class="v">AES_key_.aes (UTF8)</span></div>
+    <div class="row"><span class="k">IV</span><span class="v">32 zeros (HEX)</span></div>
+    <div class="row"><span class="k">Mode</span><span class="v">CBC</span></div>
+    <div class="row"><span class="k">Input / Output</span><span class="v">Raw</span></div>
+  </div>
+
+  <h2><span class="hash">#</span> Walkthrough</h2>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">01</span><span class="step-cap">All inputs and the solution in CyberChef: the AES Decrypt recipe, the loaded ciphertext, and the decrypted output.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-3/m3-01-cyberchef-solution.jpg" alt="CyberChef AES decryption solution" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">02</span><span class="step-cap">The key file used in the decryption.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-3/m3-02-cyberchef-key-config.jpg" alt="The AES key file" loading="lazy"></div>
+  </div>
+
+  <div class="tools-box">
+    <h3>// tools &amp; skills</h3>
+    <div class="grid">
+      <div class="t">CyberChef</div>
+      <div class="t">AES-256-CBC</div>
+      <div class="t">IV configuration</div>
+      <div class="t">Symmetric crypto</div>
+      <div class="t">Debugging</div>
+    </div>
+    <div class="skills-line"><span class="green">demonstrates:</span> symmetric cryptography, IV and mode configuration, diagnosing decryption artifacts, tool adaptability</div>
+  </div>
+
+  <div class="foot-links">
+    <a class="btn" href="milestone-2.html">← Milestone 2</a>
+    <a class="btn primary" href="../index.html#featured">$ cd ../projects</a>
+  </div>
+
+</section>
+<footer>
+  <div class="wrap foot-term"><span class="green">stallings@sec</span>:~$ # CYBR 4843 Ethical Hacking</div>
+</footer>
+</body>
+</html>

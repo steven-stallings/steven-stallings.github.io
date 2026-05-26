@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milestone 1 — Forensic File Identification via MD5 Hashing | Steven Stallings</title>
+<meta name="description" content="CYBR 4843 Ethical Hacking — identifying a target file in a large dataset using bulk MD5 hashing, grep, and manual verification.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--bg-alt:#11161d;--surface:#161b22;--surface-2:#1c232c;
+  --border:#27303b;--border-bright:#39414d;--text:#e6edf3;--text-dim:#8b949e;
+  --text-faint:#6e7681;--green:#39d353;--green-dim:#2ea043;--blue:#58a6ff;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Inter',sans-serif;--maxw:880px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(57,211,83,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(57,211,83,.022) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;z-index:0}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+::selection{background:rgba(57,211,83,.3);color:#fff}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px;background:rgba(13,17,23,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{font-family:var(--mono);font-weight:600;font-size:14px}
+.logo .prompt{color:var(--green)}
+.back{font-family:var(--mono);font-size:13px;color:var(--text-dim)}
+.back:hover{color:var(--green);text-decoration:none}
+
+header.hero{padding:64px 0 40px}
+.crumb{font-family:var(--mono);font-size:12.5px;color:var(--text-faint);margin-bottom:18px}
+.crumb .green{color:var(--green)}
+.tag-course{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--green);border:1px solid var(--green-dim);border-radius:5px;padding:4px 11px;margin-bottom:18px}
+h1{font-size:clamp(28px,5vw,42px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+.lead{font-size:18px;color:var(--text-dim);max-width:680px}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font-family:var(--mono);font-size:12px;padding:5px 12px;background:var(--surface);border:1px solid var(--border-bright);border-radius:6px;color:var(--blue)}
+
+.result-banner{margin:36px 0;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:8px;padding:20px 22px}
+.result-banner .label{font-family:var(--mono);font-size:11.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.result-banner .val{font-family:var(--mono);font-size:18px;color:var(--green);font-weight:600}
+
+section.body{padding:20px 0 40px}
+h2{font-size:22px;font-weight:700;margin:40px 0 14px;letter-spacing:-.3px}
+h2 .hash{color:var(--green);font-family:var(--mono);font-weight:500}
+p.story{font-size:16px;color:#c9d1d9;margin-bottom:18px}
+
+.step{margin:34px 0}
+.step-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.step-num{font-family:var(--mono);font-size:12px;color:var(--green);background:var(--surface-2);border:1px solid var(--border);border-radius:5px;padding:3px 9px;flex-shrink:0}
+.step-cap{font-size:14.5px;color:var(--text-dim)}
+.shot{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#000;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.shot img{display:block;width:100%;height:auto}
+
+.tools-box{margin:40px 0;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px}
+.tools-box h3{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:14px}
+.tools-box .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.tools-box .t{font-family:var(--mono);font-size:13px;color:var(--text-dim);padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px}
+.skills-line{font-family:var(--mono);font-size:13px;color:var(--text-dim);margin-top:16px}
+.skills-line .green{color:var(--green)}
+
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;margin:40px 0;padding-top:28px;border-top:1px solid var(--border)}
+.btn{font-family:var(--mono);font-size:13.5px;padding:11px 18px;border-radius:7px;border:1px solid var(--border-bright);color:var(--text);transition:.18s}
+.btn:hover{border-color:var(--green);color:var(--green);text-decoration:none}
+.btn.primary{background:var(--green);color:#06210d;border-color:var(--green);font-weight:600}
+.btn.primary:hover{background:#46e862;color:#06210d}
+
+footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
+.foot-term{font-family:var(--mono);font-size:12.5px;color:var(--text-faint)}
+.foot-term .green{color:var(--green)}
+
+@media(max-width:640px){.lead{font-size:16px}h1{font-size:26px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="../index.html"><span class="prompt">stallings@sec</span>:~$</a>
+  <a class="back" href="../index.html">cd ../</a>
+</nav>
+
+<header class="hero wrap">
+  <div class="crumb"><span class="green">~</span>/projects/milestone-1</div>
+  <div class="tag-course">CYBR 4843 · Ethical Hacking · Milestone 1</div>
+  <h1>Forensic File Identification via Bulk MD5 Hashing</h1>
+  <p class="lead">Find one target file inside a large dataset using only its hash. I generated MD5 hashes across the entire dataset, searched for the provided hash, and verified the match by hand.</p>
+  <div class="meta-row">
+    <span class="chip">Ubuntu</span>
+    <span class="chip">VirtualBox</span>
+    <span class="chip">md5sum</span>
+    <span class="chip">grep</span>
+    <span class="chip">Linux CLI</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="result-banner">
+    <div class="label"># identified target file</div>
+    <div class="val">file1693.txt</div>
+  </div>
+</div>
+
+<section class="body wrap">
+
+  <h2><span class="hash">#</span> Approach</h2>
+  <p class="story">I remembered from a previous Linux Administration course that Ubuntu has md5sum for generating hashes, so that was my starting point. First I needed the provided dataset shared between my PC and Ubuntu running in Oracle VM VirtualBox. I shared the folder through the Oracle menu and named it plain_files to match the naming scheme of the project files, then confirmed it showed up in the /mnt/ directory.</p>
+  <p class="story">The auto-mount option I checked did not work, so I manually mounted plain_files and confirmed both that the mount worked and that all the files were present. From there I ran md5sum across the whole dataset and saved the filenames and hashes to a text file. I confirmed the files were actually hashed before trusting the output, because I work from zero trust. Finally I opened the provided hash, used grep to find the matching hash in my generated list, and manually confirmed the match by pulling up the hashed result for file1693.txt.</p>
+
+  <h2><span class="hash">#</span> Walkthrough</h2>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">01</span><span class="step-cap">Creating the shared folder "plain_files" between the host and the Ubuntu VM.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-01-create-shared-folder.jpg" alt="VirtualBox shared folder configuration" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">02</span><span class="step-cap">Confirming plain_files is in the /mnt/ directory.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-02-confirm-in-mnt.jpg" alt="Confirming plain_files in /mnt" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">03</span><span class="step-cap">Manually mounting the shared folder since the auto-mount did not work.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-03-mount-shared-folder.jpg" alt="Mounting the shared folder" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">04</span><span class="step-cap">Confirming the folder is mounted.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-04-confirm-mounted.jpg" alt="Confirming mount" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">05</span><span class="step-cap">Using ls to ensure the files are present.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-05-ls-verify-files.jpg" alt="ls to verify files" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">06</span><span class="step-cap">Files present after the ls command.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-06-files-present.jpg" alt="Files present" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">07</span><span class="step-cap">Using md5sum to generate hashes for all files in plain_files and writing them to a text file.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-07-md5sum-generate-hashes.jpg" alt="md5sum generating hashes" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">08</span><span class="step-cap">Confirming the hashes were generated using the head command.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-08-confirm-hashes-head.jpg" alt="Confirming hashes with head" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">09</span><span class="step-cap">The provided hash that will be used to find the matching file.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-09-provided-hash.jpg" alt="Provided target hash" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">10</span><span class="step-cap">Using grep to search for the provided hash and surfacing file1693.txt as the match.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-10-grep-match-file1693.jpg" alt="grep finds file1693.txt" loading="lazy"></div>
+  </div>
+
+  <div class="step">
+    <div class="step-head"><span class="step-num">11</span><span class="step-cap">Confirming the hashes match manually, side by side with the provided hash.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-11-manual-hash-match.jpg" alt="Manual hash match confirmation" loading="lazy"></div>
+  </div>
+
+  <div class="tools-box">
+    <h3>// tools &amp; skills</h3>
+    <div class="grid">
+      <div class="t">Ubuntu</div>
+      <div class="t">VirtualBox</div>
+      <div class="t">md5sum</div>
+      <div class="t">grep</div>
+      <div class="t">head</div>
+      <div class="t">Linux CLI</div>
+    </div>
+    <div class="skills-line"><span class="green">demonstrates:</span> digital forensics, file integrity verification, hash-based identification, zero-trust verification</div>
+  </div>
+
+  <div class="foot-links">
+    <a class="btn" href="../index.html#featured">$ cd ../projects</a>
+    <a class="btn primary" href="../projects/milestone-2.html">next: Milestone 2 →</a>
+  </div>
+
+</section>
+
+<footer>
+  <div class="wrap foot-term"><span class="green">stallings@sec</span>:~$ # CYBR 4843 Ethical Hacking</div>
+</footer>
+
+</body>
+</html>
