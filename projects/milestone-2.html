@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Milestone 2 — RSA Decryption with OpenSSL (OAEP) | Steven Stallings</title>
-<meta name="description" content="CYBR 4843 Ethical Hacking — decrypting an RSA ciphertext by independently identifying the OAEP padding scheme and using OpenSSL pkeyutl.">
+<meta name="description" content="Ethical Hacking — decrypting an RSA ciphertext by independently identifying the OAEP padding scheme and using OpenSSL pkeyutl.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -75,7 +76,7 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 </nav>
 <header class="hero wrap">
   <div class="crumb"><span class="green">~</span>/projects/milestone-2</div>
-  <div class="tag-course">CYBR 4843 · Ethical Hacking · Milestone 2</div>
+  <div class="tag-course">Ethical Hacking · Milestone 2</div>
   <h1>RSA Decryption with OpenSSL &amp; OAEP Padding</h1>
   <p class="lead">Decrypt an RSA ciphertext with no guidance on the padding scheme. I researched the options, identified OAEP as the correct scheme, and decrypted the message using OpenSSL pkeyutl.</p>
   <div class="meta-row">
@@ -88,19 +89,15 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 </header>
 <div class="wrap">
   <div class="result-banner">
-    <div class="label"># decrypted plaintext</div>
-    <div class="val">Thank you for rescuing me from that prision</div>
+    <div class="label"># result</div>
+    <div class="val">ciphertext decrypted — message recovered</div>
   </div>
 </div>
 <section class="body wrap">
 
   <h2><span class="hash">#</span> Approach</h2>
   <p class="story">I used a solution similar to the first milestone here. I like to map out the available resources and tools before starting, and I had read about and seen OpenSSL before through the cybersecurity program at KSU, so that was the route I wanted to explore. I created a shared folder between my system and Oracle VM VirtualBox to access the files in the VM. The auto-mount and make-permanent options failed again, just like in Milestone 1, so I manually created the directory and mounted the shared folder, then confirmed the files were present.</p>
-  <p class="story">From there I moved on to decryption. The padding component was new to me, so it took some work. After several failed attempts and some research, I settled on Optimal Asymmetric Encryption Padding (OAEP), which is most commonly used in RSA encryption. I ran the decryption with that padding mode and the message came back: "Thank you for rescuing me from that prision."</p>
-
-  <h2><span class="hash">#</span> The decryption command</h2>
-  <div class="cmd-block"><code>openssl pkeyutl -decrypt -inkey /mnt/milestone_2_dataset/private_key.pem \
-  -in /mnt/milestone_2_dataset/emessage.etxt -pkeyopt rsa_padding_mode:oaep</code></div>
+  <p class="story">From there I moved on to decryption. The padding component was new to me, so it took some work. After several failed attempts and some research, I settled on Optimal Asymmetric Encryption Padding (OAEP), which is most commonly used in RSA encryption. I ran the decryption with that padding mode and the message decrypted cleanly.</p>
 
   <h2><span class="hash">#</span> Walkthrough</h2>
 
@@ -139,7 +136,7 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 
 </section>
 <footer>
-  <div class="wrap foot-term"><span class="green">stallings@sec</span>:~$ # CYBR 4843 Ethical Hacking</div>
+  <div class="wrap foot-term"><span class="green">stallings@sec</span>:~$ # Ethical Hacking</div>
 </footer>
 </body>
 </html>

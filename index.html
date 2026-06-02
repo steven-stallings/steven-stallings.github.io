@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Steven Stallings — Cybersecurity Portfolio</title>
 <meta name="description" content="Cybersecurity portfolio of Steven Stallings — ethical hacking, digital forensics, Linux administration, and security analysis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 <style>
 :root{
   --bg:#0d1117;--bg-alt:#11161d;--surface:#161b22;--surface-2:#1c232c;
@@ -118,6 +118,7 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .script-head .tag{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--blue);background:var(--surface-2);padding:3px 9px;border-radius:5px}
 .script-block pre{margin:0;max-height:420px;overflow:auto}
 .script-block pre code{font-family:var(--mono)!important;font-size:12.5px;padding:18px!important;background:transparent!important}
+.script-block .code-img{display:block;width:100%;background:var(--bg)}
 .script-desc{padding:13px 18px;font-size:13px;color:var(--text-dim);border-top:1px solid var(--border)}
 .script-desc .sec{color:var(--green);font-family:var(--mono);font-size:11.5px}
 
@@ -249,7 +250,7 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 
 <section id="capstone" class="wrap reveal">
   <div class="section-label">senior capstone</div>
-  <h2 class="section-title">CYBR 4810 — Cyber Defense Capstone</h2>
+  <h2 class="section-title">Cyber Defense Capstone</h2>
   <p class="section-sub">A semester building a complete security program for Cyber Tree Systems, a fictional cybersecurity consulting firm. I led the incident response effort and authored the threat intelligence, network architecture, and governance work below. Cyber Tree Systems, its staff, and its network are fictional.</p>
 
   <div class="subhead">Incident Response Leadership</div>
@@ -312,7 +313,7 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 
 <section id="servers" class="wrap reveal">
   <div class="section-label">server systems &amp; hardening</div>
-  <h2 class="section-title">CYBR 4220 — Vulnerability Assessment &amp; Server Hardening</h2>
+  <h2 class="section-title">Vulnerability Assessment &amp; Server Hardening</h2>
   <p class="section-sub">Two sides of the same job: finding what is wrong with a system, and locking down a system so there is nothing to find. I ran a full vulnerability assessment against a hidden server, then hardened my own Windows and Linux servers down to only the services they needed.</p>
 
   <div class="subhead">Vulnerability Assessment of a Hidden Server</div>
@@ -424,15 +425,15 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 <section id="featured" class="wrap reveal">
   <div class="section-label">featured projects</div>
   <h2 class="section-title">Milestone Series</h2>
-  <p class="section-sub">Three independent challenge projects from CYBR 4843 Ethical Hacking. Minimal instructions, research-driven solutions, verified results. Each links to a full case study.</p>
+  <p class="section-sub">Three independent challenge projects from my Ethical Hacking coursework. Minimal instructions, research-driven solutions, verified results. Each links to a full case study.</p>
   <div class="featured-grid">
 
     <a class="feat-card" href="projects/milestone-1.html">
       <div class="feat-num">milestone_01</div>
       <h3>Forensic File Identification via Bulk MD5 Hashing</h3>
-      <div class="course">CYBR 4843 · Ethical Hacking</div>
+      <div class="course">Ethical Hacking</div>
       <p>Hashed an entire dataset with md5sum, then used grep to locate a target file by its hash and verified the match by hand.</p>
-      <div class="feat-result"><span class="label"># identified target</span>file1693.txt</div>
+      <div class="feat-result"><span class="label"># result</span>target file matched by hash</div>
       <div class="tool-tags"><span class="tool-tag">Ubuntu</span><span class="tool-tag">md5sum</span><span class="tool-tag">grep</span></div>
       <span class="feat-cta">view case study →</span>
     </a>
@@ -440,9 +441,9 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <a class="feat-card" href="projects/milestone-2.html">
       <div class="feat-num">milestone_02</div>
       <h3>RSA Decryption with OpenSSL &amp; OAEP Padding</h3>
-      <div class="course">CYBR 4843 · Ethical Hacking</div>
+      <div class="course">Ethical Hacking</div>
       <p>With no guidance on padding, researched the schemes, identified OAEP, and decrypted the RSA ciphertext using OpenSSL pkeyutl.</p>
-      <div class="feat-result"><span class="label"># decrypted plaintext</span>Thank you for rescuing me from that prision</div>
+      <div class="feat-result"><span class="label"># result</span>ciphertext decrypted</div>
       <div class="tool-tags"><span class="tool-tag">OpenSSL</span><span class="tool-tag">RSA</span><span class="tool-tag">OAEP</span></div>
       <span class="feat-cta">view case study →</span>
     </a>
@@ -450,9 +451,9 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <a class="feat-card" href="projects/milestone-3.html">
       <div class="feat-num">milestone_03</div>
       <h3>AES-CBC Decryption via CyberChef</h3>
-      <div class="course">CYBR 4843 · Ethical Hacking</div>
+      <div class="course">Ethical Hacking</div>
       <p>Diagnosed a partial decryption caused by a wrong IV and corrected it in CyberChef with the right key, mode, and encoding.</p>
-      <div class="feat-result"><span class="label"># decrypted plaintext</span>The angels have the phonebox!!!</div>
+      <div class="feat-result"><span class="label"># result</span>plaintext recovered</div>
       <div class="tool-tags"><span class="tool-tag">CyberChef</span><span class="tool-tag">AES-256-CBC</span></div>
       <span class="feat-cta">view case study →</span>
     </a>
@@ -462,7 +463,7 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 
 <section id="labs" class="wrap reveal">
   <div class="section-label">ethical hacking labs</div>
-  <h2 class="section-title">CYBR 4843 — Kali Linux</h2>
+  <h2 class="section-title">Ethical Hacking — Kali Linux</h2>
   <p class="section-sub">Hands-on lab work covering reconnaissance, exploitation, post-exploitation, and detection evasion. Each lab below shows my own console output from the work.</p>
   <div class="lab-grid">
 
@@ -523,7 +524,7 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 
 <section id="linux" class="wrap reveal">
   <div class="section-label">linux administration</div>
-  <h2 class="section-title">CYBR 4423</h2>
+  <h2 class="section-title">System Administration</h2>
   <p class="section-sub">System administration fundamentals: filesystem operations, user and group management, software and storage administration, and Bash scripting.</p>
   <div class="linux-list">
     <div class="linux-item"><div class="lab-id">setup</div><h4>Environment Setup</h4><p>VirtualBox setup, Ubuntu install, GNOME navigation.</p></div>
@@ -537,12 +538,12 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 
 <section id="networking" class="wrap reveal">
   <div class="section-label">networking</div>
-  <h2 class="section-title">CYBR 4323 — Packet Analysis</h2>
+  <h2 class="section-title">Network Packet Analysis</h2>
   <p class="section-sub">Protocol-level traffic inspection with Wireshark.</p>
   <div class="duo">
     <div class="panel">
       <h3>Wireshark Packet Analysis</h3>
-      <div class="meta">CYBR 4323 · Packet Analysis</div>
+      <div class="meta">Packet Analysis</div>
       <ul>
         <li>HTTP traffic analysis across two capture files</li>
         <li>GET requests, acknowledgments, source/destination tracing</li>
@@ -553,7 +554,7 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     </div>
     <div class="panel" style="display:flex;flex-direction:column;justify-content:center">
       <h3>Packet-Level Fluency</h3>
-      <div class="meta">across CYBR 4843 + 4323</div>
+      <div class="meta">across the offensive &amp; networking labs</div>
       <p style="font-size:14px;color:var(--text-dim)">Packet crafting (Scapy), capture analysis (tcpdump, Wireshark), and protocol dissection appear throughout the offensive labs as well, from SYN/ACK inspection during recon to ICMP and timestamp analysis with hping3.</p>
     </div>
   </div>
@@ -566,102 +567,19 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 
   <div class="script-block">
     <div class="script-head"><div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div><span class="fname">tax_calculator.py</span><span class="tag">Tiered Income Tax Calculator</span></div>
-    <pre><code class="language-python"># Purpose: This program calculates the total income tax owed for a year.
-
-# I started by prompting for required user input. I set income to float to accept all values. Elevation to integer
-# since there would be no decimals.
-annual_income = float(input("What was your total income for this year?: "))
-marital_status = input("Are you married? [y/n]?: ")
-marriage_length = float(input("How many years have you been married?: "))
-elevation_status = int(input("What is the Sea Level of your home?: 1 - Below, 2 - At, 3 - Above : "))
-
-# If annual income is less than 10000 than income tax = 2.3% of annual income
-if annual_income < 10000:
-    income_tax = annual_income * 0.023
-# 10000 to 50000 -> 4.5%
-elif annual_income >= 10000 and annual_income <= 50000:
-    income_tax = annual_income * 0.045
-# greater than 50000 -> 6.1%
-elif annual_income > 50000:
-    income_tax = annual_income * 0.061
-
-# elevation adjustments
-if elevation_status == 1:
-    income_tax += 18.32
-if elevation_status == 2:
-    income_tax += (0.016 * annual_income)
-if elevation_status == 3:
-    total_bedrooms = float(input("How many bedrooms do you have?: "))
-    income_tax += (5 * total_bedrooms)
-# marital deduction
-if marital_status == "y":
-    income_tax -= (1.62 * marriage_length)
-
-total_tax = income_tax
-print("Total Tax: ", income_tax)</code></pre>
+    <img class="code-img" src="assets/code/img/tax_calculator.png" alt="tax_calculator.py source code" loading="lazy">
     <div class="script-desc"><span class="sec">// concepts</span> &nbsp;Tiered tax brackets, conditional logic, type-aware input handling, and a marital deduction.</div>
   </div>
 
   <div class="script-block">
     <div class="script-head"><div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div><span class="fname">user_manager.py</span><span class="tag">File-Based User Management</span></div>
-    <pre><code class="language-python">def create_file():
-    fout = open("users.txt", "w")
-    fout.close()
-
-
-def add_user(user_name):
-    fout = open("users.txt", "a")
-    fout.write(user_name + "\n")
-    fout.close()
-
-
-def update_user(old_user, new_user):
-    fin = open("users.txt", "r")
-    lines = fin.read().split("\n")
-    fin.close()
-    fout = open("users.txt", "w")
-    for i in lines:
-        if old_user in i:
-            i = i.replace(old_user, new_user)
-        fout.write(i + "\n")
-    fout.close()
-
-
-def remove_user(name):
-    fin = open("users.txt", "r")
-    lines = fin.read().split("\n")
-    fin.close()
-    fout = open("users.txt", "w")
-    for i in lines:
-        if name != i.strip():
-            fout.write(i + "\n")
-    fout.close()</code></pre>
+    <img class="code-img" src="assets/code/img/user_manager.png" alt="user_manager.py source code" loading="lazy">
     <div class="script-desc"><span class="sec">// security relevance</span> &nbsp;CRUD operations modeling user account lifecycle management against a flat-file store.</div>
   </div>
 
   <div class="script-block">
     <div class="script-head"><div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div><span class="fname">array_merge_sort.py</span><span class="tag">Array Merge &amp; Sort</span></div>
-    <pre><code class="language-python"># Purpose: Combine two random integer arrays into a third, larger array
-# without duplicate values, sorted in ascending numerical order.
-import random
-
-N = int(input("Enter a positive integer greater than 1: "))
-arr1 = []
-for i in range(N):
-    arr1.append(random.randint(0, 500))
-arr2 = []
-for i in range(N):
-    arr2.append(random.randint(0, 500))
-
-# combine, then convert to set to remove duplicates, then back to list
-arr3 = list(set(arr1 + arr2))
-# manual bubble sort, ascending
-for i in range(len(arr3)):
-    for j in range(i + 1, len(arr3)):
-        if arr3[i] > arr3[j]:
-            arr3[i], arr3[j] = arr3[j], arr3[i]
-for i in arr3:
-    print(i)</code></pre>
+    <img class="code-img" src="assets/code/img/array_merge_sort.png" alt="array_merge_sort.py source code" loading="lazy">
     <div class="script-desc"><span class="sec">// concepts</span> &nbsp;Set-based deduplication and a hand-implemented bubble sort.</div>
   </div>
 </section>
@@ -674,20 +592,20 @@ for i in arr3:
 
     <div class="write-card">
       <h3>HealthCare.gov Failure Analysis</h3>
-      <div class="course">CYBR 3223 · Software Acquisition</div>
+      <div class="course">Software Acquisition</div>
       <p>Case study of why the federal HealthCare.gov rollout failed: no single accountable project leader, requirements delivered to contractors far too late, cost-reimbursable contracts that ran the estimate from $292M to $2.1B, and untested-at-scale technology that collapsed on launch day.</p>
       <div class="sources">sources: Lee &amp; Brumer · GAO / Levinson</div>
     </div>
 
     <div class="write-card">
       <h3>RFP Evaluation &amp; Recommendations</h3>
-      <div class="course">CYBR 3223 · Software Acquisition</div>
+      <div class="course">Software Acquisition</div>
       <p>Evaluated a public augmented-reality app RFP, identified gaps a vendor could not price accurately (missing hosting, data security, OS support, and branding requirements; ambiguous contract scope), and recommended a technical requirements section and clearer post-warranty terms.</p>
     </div>
 
     <div class="write-card">
       <h3>Zero Trust Architecture</h3>
-      <div class="course">CYBR 4200</div>
+      <div class="course">Network Security</div>
       <p>Full essay on never-trust/assume-breach principles, the policy engine/administrator/enforcement point model, IAM and MFA, non-person-entity risks, and CIA triad extensions.</p>
       <div class="sources">sources: NSA CSI · NIST SP 800-207</div>
     </div>
@@ -696,13 +614,7 @@ for i in arr3:
       <div class="cve">CVE-2022-37418</div>
       <h3>RKE Rollback Attack on Key Fobs</h3>
       <div class="course">Software Assurance</div>
-      <p>Analysis of a rolling-code replay against Nissan, Kia, and Hyundai key fobs. A RollJam device captures two consecutive signals and replays them to reset the counter.</p>
-    </div>
-
-    <div class="write-card">
-      <h3>Baxter Infusion Pump Key-Bounce Bug</h3>
-      <div class="course">Software Assurance</div>
-      <p>Key-bounce vulnerability in Colleague and Syndeo pumps (2006), debouncing as remediation, and the FDA / U.S. Marshals seizure, connecting a software defect to real-world harm.</p>
+      <p>Analysis of the RollBack replay attack against Nissan, Kia, and Hyundai key fobs: capturing two consecutive valid key fob signals and replaying them to force the receiver to resynchronize, re-enabling the captured codes.</p>
     </div>
 
     <div class="write-card">
@@ -714,7 +626,7 @@ for i in arr3:
 
     <div class="write-card">
       <h3>IR / DR Comparison</h3>
-      <div class="course">CYBR 4330</div>
+      <div class="course">Incident Response &amp; DR</div>
       <p>Incident response and disaster recovery steps mapped across five disaster types: hurricane, tornado, earthquake, flood, and fire.</p>
     </div>
 
@@ -756,10 +668,7 @@ for i in arr3:
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
 <script>
-  hljs.highlightAll();
   function closeNav(){document.getElementById('navlinks').classList.remove('open');}
   const obs=new IntersectionObserver((entries)=>{
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});

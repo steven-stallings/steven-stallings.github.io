@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>Milestone 1 — Forensic File Identification via MD5 Hashing | Steven Stallings</title>
-<meta name="description" content="CYBR 4843 Ethical Hacking — identifying a target file in a large dataset using bulk MD5 hashing, grep, and manual verification.">
+<meta name="description" content="Ethical Hacking — identifying a target file in a large dataset using bulk MD5 hashing, grep, and manual verification.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -84,7 +85,7 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 
 <header class="hero wrap">
   <div class="crumb"><span class="green">~</span>/projects/milestone-1</div>
-  <div class="tag-course">CYBR 4843 · Ethical Hacking · Milestone 1</div>
+  <div class="tag-course">Ethical Hacking · Milestone 1</div>
   <h1>Forensic File Identification via Bulk MD5 Hashing</h1>
   <p class="lead">Find one target file inside a large dataset using only its hash. I generated MD5 hashes across the entire dataset, searched for the provided hash, and verified the match by hand.</p>
   <div class="meta-row">
@@ -98,8 +99,8 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 
 <div class="wrap">
   <div class="result-banner">
-    <div class="label"># identified target file</div>
-    <div class="val">file1693.txt</div>
+    <div class="label"># result</div>
+    <div class="val">target file identified by hash match</div>
   </div>
 </div>
 
@@ -107,7 +108,7 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 
   <h2><span class="hash">#</span> Approach</h2>
   <p class="story">I remembered from a previous Linux Administration course that Ubuntu has md5sum for generating hashes, so that was my starting point. First I needed the provided dataset shared between my PC and Ubuntu running in Oracle VM VirtualBox. I shared the folder through the Oracle menu and named it plain_files to match the naming scheme of the project files, then confirmed it showed up in the /mnt/ directory.</p>
-  <p class="story">The auto-mount option I checked did not work, so I manually mounted plain_files and confirmed both that the mount worked and that all the files were present. From there I ran md5sum across the whole dataset and saved the filenames and hashes to a text file. I confirmed the files were actually hashed before trusting the output, because I work from zero trust. Finally I opened the provided hash, used grep to find the matching hash in my generated list, and manually confirmed the match by pulling up the hashed result for file1693.txt.</p>
+  <p class="story">The auto-mount option I checked did not work, so I manually mounted plain_files and confirmed both that the mount worked and that all the files were present. From there I ran md5sum across the whole dataset and saved the filenames and hashes to a text file. I confirmed the files were actually hashed before trusting the output, because I work from zero trust. Finally I opened the provided hash, used grep to find the matching hash in my generated list, and manually confirmed the match by pulling up the hashed result for the target file.</p>
 
   <h2><span class="hash">#</span> Walkthrough</h2>
 
@@ -157,8 +158,8 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
   </div>
 
   <div class="step">
-    <div class="step-head"><span class="step-num">10</span><span class="step-cap">Using grep to search for the provided hash and surfacing file1693.txt as the match.</span></div>
-    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-10-grep-match-file1693.jpg" alt="grep finds file1693.txt" loading="lazy"></div>
+    <div class="step-head"><span class="step-num">10</span><span class="step-cap">Using grep to search for the provided hash and surfacing the matching file.</span></div>
+    <div class="shot"><img src="../assets/screenshots/milestone-1/m1-10-grep-match.jpg" alt="grep finds the matching file" loading="lazy"></div>
   </div>
 
   <div class="step">
@@ -187,7 +188,7 @@ footer{border-top:1px solid var(--border);padding:36px 0;text-align:center}
 </section>
 
 <footer>
-  <div class="wrap foot-term"><span class="green">stallings@sec</span>:~$ # CYBR 4843 Ethical Hacking</div>
+  <div class="wrap foot-term"><span class="green">stallings@sec</span>:~$ # Ethical Hacking</div>
 </footer>
 
 </body>
