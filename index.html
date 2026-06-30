@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Steven Stallings — Cybersecurity Portfolio</title>
-<meta name="description" content="Cybersecurity portfolio of Steven Stallings — ethical hacking, digital forensics, Linux administration, and security analysis.">
+<title>Steven Stallings — Cybersecurity &amp; IT Portfolio</title>
+<meta name="description" content="Portfolio of Steven Stallings — incident response leadership, digital forensics, systems administration, network analysis, and automation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,7 +23,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(57,211,83,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(57,211,83,0.025) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;z-index:0}
 a{color:inherit;text-decoration:none}
 ::selection{background:rgba(57,211,83,0.3);color:#fff}
-
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:64px;background:rgba(13,17,23,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .logo{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--text)}
 .logo .prompt{color:var(--green)}
@@ -33,14 +32,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links a{color:var(--text-dim);transition:color .15s}
 .nav-links a:hover{color:var(--green)}
 .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;font-family:var(--mono)}
-
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
 section{padding:96px 0;position:relative;z-index:1}
 .section-label{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:10px;display:flex;align-items:center;gap:10px}
 .section-label::before{content:"//";color:var(--text-faint)}
 h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bottom:8px}
 .section-sub{color:var(--text-dim);font-size:15px;margin-bottom:40px;max-width:640px}
-
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:64px}
 .hero-term{font-family:var(--mono);font-size:13.5px;color:var(--text-dim);margin-bottom:26px;opacity:0;animation:fadeUp .6s .1s forwards}
 .hero-term .green{color:var(--green)}
@@ -58,10 +55,8 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .btn-ghost{border-color:var(--border-bright);color:var(--text)}
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
 .reveal.in{opacity:1;transform:translateY(0)}
-
 .featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .feat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px;display:flex;flex-direction:column;transition:.22s;position:relative;overflow:hidden;cursor:pointer}
 .feat-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--green),var(--blue));transform:scaleX(0);transform-origin:left;transition:transform .3s}
@@ -77,7 +72,6 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .feat-card:hover .feat-cta{color:var(--green)}
 .tool-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .tool-tag{font-family:var(--mono);font-size:11px;padding:3px 9px;background:var(--surface-2);border-radius:5px;color:var(--blue)}
-
 .lab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .lab-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;transition:.2s;display:flex;flex-direction:column}
 .lab-card:hover{border-color:var(--green);transform:translateY(-3px)}
@@ -91,7 +85,6 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .lab-shots img{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:6px;background:#1a1f27}
 .lab-card .cap{font-family:var(--mono);font-size:10.5px;color:var(--text-faint);margin:-4px 0 10px;line-height:1.4}
 .lab-card:hover .lab-pdf{color:var(--blue)}
-
 .duo{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .panel{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:26px;transition:.2s}
 .panel:hover{border-color:var(--border-bright)}
@@ -101,14 +94,12 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .panel li{font-size:13.5px;color:var(--text-dim);padding-left:18px;position:relative;margin-bottom:7px}
 .panel li::before{content:"▹";position:absolute;left:0;color:var(--green)}
 .keyquote{font-family:var(--mono);font-size:12.5px;color:var(--blue);border-left:2px solid var(--blue);padding-left:12px;margin-top:8px;font-style:italic}
-
 .linux-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
 .linux-item{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:15px 18px;transition:.18s}
 .linux-item:hover{border-color:var(--green);background:var(--surface-2)}
 .linux-item .lab-id{font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:5px}
 .linux-item h4{font-size:14px;font-weight:600;margin-bottom:5px}
 .linux-item p{font-size:12.5px;color:var(--text-dim)}
-
 .script-block{margin-bottom:24px;background:var(--surface);border:1px solid var(--border);border-radius:11px;overflow:hidden}
 .script-head{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid var(--border);background:var(--bg-alt)}
 .script-head .dots{display:flex;gap:6px}
@@ -121,7 +112,6 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .script-block .code-img{display:block;width:100%;background:var(--bg)}
 .script-desc{padding:13px 18px;font-size:13px;color:var(--text-dim);border-top:1px solid var(--border)}
 .script-desc .sec{color:var(--green);font-family:var(--mono);font-size:11.5px}
-
 .writing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 .write-card{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:24px;transition:.2s}
 .write-card:hover{border-color:var(--blue);transform:translateY(-3px)}
@@ -130,7 +120,6 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .write-card .course{font-family:var(--mono);font-size:11px;color:var(--text-faint);margin-bottom:12px}
 .write-card p{font-size:13.5px;color:var(--text-dim);margin-bottom:12px}
 .write-card .sources{font-family:var(--mono);font-size:11px;color:var(--blue)}
-
 .va-lead{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px;margin-bottom:20px}
 .va-lead p{font-size:14.5px;color:var(--text-dim);margin-bottom:14px}
 .va-lead p:last-child{margin-bottom:0}
@@ -156,7 +145,6 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .finding .fix::before{content:"fix:";position:absolute;left:-2px;display:none}
 .finding .cverefs{display:flex;flex-wrap:wrap;gap:5px}
 .finding .cveref{font-family:var(--mono);font-size:10.5px;padding:2px 7px;background:var(--surface-2);border-radius:4px;color:var(--text-faint)}
-
 .shot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .shot{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:.2s}
 .shot:hover{border-color:var(--border-bright)}
@@ -165,7 +153,6 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .shot figcaption .tag{color:var(--green)}
 .subhead{font-family:var(--mono);font-size:13px;color:var(--blue);margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .subhead::before{content:"## ";color:var(--text-faint)}
-
 .lead-story{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--green);border-radius:10px;padding:24px 26px;margin-bottom:24px}
 .lead-story h3{font-size:17px;font-weight:600;margin-bottom:6px}
 .lead-story .role{font-family:var(--mono);font-size:11.5px;color:var(--blue);margin-bottom:14px}
@@ -182,14 +169,12 @@ h2.section-title{font-size:30px;font-weight:700;letter-spacing:-0.5px;margin-bot
 .policy-item .ptype{font-family:var(--mono);font-size:10.5px;color:var(--green);margin-bottom:6px;letter-spacing:.5px}
 .policy-item h4{font-size:14.5px;font-weight:600;margin-bottom:5px}
 .policy-item p{font-size:12.5px;color:var(--text-dim)}
-
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .skill-col{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:22px}
 .skill-col h4{font-family:var(--mono);font-size:13px;color:var(--green);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
 .skill-col ul{list-style:none}
 .skill-col li{font-size:13px;color:var(--text-dim);margin-bottom:9px;font-family:var(--mono);transition:.15s}
 .skill-col li:hover{color:var(--text)}
-
 footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;z-index:1}
 .foot-inner{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
 .foot-term{font-family:var(--mono);font-size:13px;color:var(--text-dim)}
@@ -198,7 +183,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 .foot-links a{color:var(--text-dim);transition:.15s}
 .foot-links a:hover{color:var(--green)}
 .foot-copy{font-family:var(--mono);font-size:11.5px;color:var(--text-faint)}
-
 @media(max-width:860px){
   .featured-grid,.skills-grid{grid-template-columns:1fr}
   .duo,.writing-grid,.finding-grid,.shot-grid{grid-template-columns:1fr}
@@ -212,7 +196,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
 </style>
 </head>
 <body>
-
 <nav>
   <div class="logo"><span class="prompt">stallings@sec</span>:~$<span class="cursor">█</span></div>
   <button class="nav-toggle" aria-label="menu" onclick="document.getElementById('navlinks').classList.toggle('open')">[≡]</button>
@@ -228,31 +211,28 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <a href="#skills" onclick="closeNav()">skills</a>
   </div>
 </nav>
-
 <header class="hero wrap">
   <div class="hero-term"><span class="green">$</span> whoami</div>
-  <h1>Steven Stallings<br><span class="accent">Cybersecurity</span> Analyst</h1>
+  <h1>Steven Stallings<br><span class="accent">Cybersecurity</span> &amp; IT</h1>
   <div class="hero-role">B.S. Cybersecurity (Cybercrime) — Kennesaw State University, May 2026</div>
-  <p class="hero-desc">Offensive and defensive security work spanning ethical hacking, digital forensics, Linux administration, and packet-level network analysis. Hands-on labs, real exploits, and primary-source written analysis.</p>
+  <p class="hero-desc">Security and IT project work spanning incident response leadership, digital forensics, Linux and systems administration, and network analysis — paired with requirements gathering, technical documentation, and process automation. Hands-on labs with documented methodology and verified results.</p>
   <div class="badges">
-    <span class="badge">Penetration Testing</span>
-    <span class="badge">Digital Forensics</span>
-    <span class="badge">Linux Administration</span>
-    <span class="badge">Network Analysis</span>
-    <span class="badge">Cryptography</span>
     <span class="badge">Incident Response</span>
+    <span class="badge">Project Leadership</span>
+    <span class="badge">Digital Forensics</span>
+    <span class="badge">Systems Administration</span>
+    <span class="badge">Network Analysis</span>
+    <span class="badge">Automation</span>
   </div>
   <div class="hero-btns">
     <a class="btn btn-primary" href="https://linkedin.com/in/steven-stallings-" target="_blank">$ open linkedin</a>
     <a class="btn btn-ghost" href="https://github.com/steven-stallings" target="_blank">$ git clone github</a>
   </div>
 </header>
-
 <section id="capstone" class="wrap reveal">
   <div class="section-label">senior capstone</div>
   <h2 class="section-title">Cyber Defense Capstone</h2>
   <p class="section-sub">A semester building a complete security program for Cyber Tree Systems, a fictional cybersecurity consulting firm. I led the incident response effort and authored the threat intelligence, network architecture, and governance work below. Cyber Tree Systems, its staff, and its network are fictional.</p>
-
   <div class="subhead">Incident Response Leadership</div>
   <div class="lead-story">
     <h3>IR Project Leader — Computer Security Incident Response Team</h3>
@@ -260,7 +240,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <p class="first">I served as the incident response project leader for my capstone team, coordinating the development of a full Incident Response Plan and Procedures document for Cyber Tree Systems. My job was to keep the plan coherent as it grew: running working sessions, folding in feedback across revisions, and making sure every section lined up before submission.</p>
     <p>The final plan covered the full incident lifecycle with a set of response playbooks, a CSIRT structure with clear roles and escalation paths, pre-approved emergency actions, a dedicated ransom-response procedure, and quick-reference contact directories for use during an active incident. The leadership challenge was less technical than organizational: turning the input of a six-person team into one document that reads with a single voice and actually works under pressure.</p>
   </div>
-
   <div class="subhead">Threat Intelligence — Salt Typhoon Breach Analysis</div>
   <div class="va-lead">
     <p class="first">I wrote an individual threat intelligence report on Salt Typhoon, the Chinese state-sponsored campaign that breached at least nine U.S. telecommunications carriers and went undetected for over a year. I built the analysis from open-source reporting and structured it around the Lockheed Martin Cyber Kill Chain, mapping the adversary's actions, capabilities, and infrastructure across every phase, then laying out courses of action to discover, detect, deny, and disrupt the threat.</p>
@@ -293,14 +272,12 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Encrypt intercept data at rest; restrict and fully log access.</div>
     </div>
   </div>
-
   <div class="subhead">Network Architecture — Firewall &amp; VPN Design</div>
   <p class="section-sub" style="margin-bottom:16px">The existing CTS network had no segmentation, no defined firewall boundaries, and no VPN infrastructure. I redesigned it around defense in depth: a perimeter firewall, a DMZ for public-facing services, an internal firewall, segmented trust zones for each department group, and a dedicated VPN concentrator for remote users.</p>
   <figure class="diagram-fig">
     <img src="assets/screenshots/capstone/cts-network-design.jpg" alt="Revised CTS network design showing perimeter firewall, DMZ, internal firewall, segmented trust zones, and VPN concentrator" loading="lazy">
     <figcaption><span class="tag"># revised network design</span> defense-in-depth segmentation: perimeter and internal firewalls, an isolated DMZ, separate administrative and technical trust zones, and a VPN concentrator tunneling remote users into the internal server zone.</figcaption>
   </figure>
-
   <div class="subhead">Governance — CTS Security Policy Library</div>
   <p class="section-sub" style="margin-bottom:16px">I authored a complete, versioned information security policy library for CTS: an overarching program policy, four issue-specific policies, and a maintained repository index. The work included reviewing the existing fragmented policies, then consolidating firewall and VPN requirements into a single coherent Network Perimeter Security Policy.</p>
   <div class="policy-grid">
@@ -310,12 +287,10 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <div class="policy-item"><div class="ptype">ISSP</div><h4>Network Perimeter Security Policy</h4><p>Consolidated firewall and VPN policy I created to replace several disconnected legacy documents.</p></div>
   </div>
 </section>
-
 <section id="servers" class="wrap reveal">
   <div class="section-label">server systems &amp; hardening</div>
   <h2 class="section-title">Vulnerability Assessment &amp; Server Hardening</h2>
   <p class="section-sub">Two sides of the same job: finding what is wrong with a system, and locking down a system so there is nothing to find. I ran a full vulnerability assessment against a hidden server, then hardened my own Windows and Linux servers down to only the services they needed.</p>
-
   <div class="subhead">Vulnerability Assessment of a Hidden Server</div>
   <div class="va-lead">
     <p class="first">I was tasked with finding and assessing a hidden server on the network. I used netdiscover for passive monitoring and nmap for active scanning, and that surfaced a hidden Linux host at an internal lab address. Once I had it, I ran a Greenbone scan against it to pull a complete picture of its weaknesses.</p>
@@ -328,9 +303,7 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <div class="va-stat"><div class="num high">16</div><div class="lbl">high severity</div></div>
     <div class="va-stat"><div class="num med">28</div><div class="lbl">medium severity</div></div>
   </div>
-
   <div class="finding-grid">
-
     <div class="finding">
       <div class="port">21 &amp; 6200/tcp <span class="sev high">high</span></div>
       <h4>vsftpd 2.3.4 Backdoor</h4>
@@ -338,7 +311,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Reinstall vsftpd from a clean package and validate its signature; replace default credentials with complex passwords.</div>
       <div class="cverefs"><span class="cveref">CVE-2011-2523</span><span class="cveref">CVE-1999-0501</span></div>
     </div>
-
     <div class="finding">
       <div class="port">1524/tcp <span class="sev high">high</span></div>
       <h4>Ingreslock Root Backdoor</h4>
@@ -346,7 +318,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Full wipe and OS reinstall. It is the only clean answer when you cannot trust the rest of the box.</div>
       <div class="cverefs"><span class="cveref">OPENVAS:103549</span></div>
     </div>
-
     <div class="finding">
       <div class="port">8009/tcp <span class="sev high">high</span></div>
       <h4>Apache Tomcat — Ghostcat</h4>
@@ -354,7 +325,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Update Tomcat immediately to a patched release.</div>
       <div class="cverefs"><span class="cveref">CVE-2020-1938</span></div>
     </div>
-
     <div class="finding">
       <div class="port">5432/tcp <span class="sev high">high</span></div>
       <h4>PostgreSQL Default Credentials</h4>
@@ -362,7 +332,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Change the default database passwords and update OpenSSL to a current version.</div>
       <div class="cverefs"><span class="cveref">CVE-2014-0224</span></div>
     </div>
-
     <div class="finding">
       <div class="port">general/tcp <span class="sev high">high</span></div>
       <h4>End-of-Life Operating System</h4>
@@ -370,7 +339,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Migrate to a supported release so the system keeps getting patches.</div>
       <div class="cverefs"><span class="cveref">EOL release</span></div>
     </div>
-
     <div class="finding">
       <div class="port">22/tcp <span class="sev med">medium</span></div>
       <h4>Weak SSH Algorithms</h4>
@@ -378,17 +346,13 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="fix">Disable ssh-dss and SHA-1 key exchange; move to RSA with SHA-256 and curve25519-sha256.</div>
       <div class="cverefs"><span class="cveref">RFC 8332</span><span class="cveref">RFC 9142</span></div>
     </div>
-
   </div>
-
   <div class="shot-grid">
     <figure class="shot"><img src="assets/screenshots/cybr4220/va-01-nmap-linux-target.jpg" alt="nmap service and OS scan of the hidden Linux target" loading="lazy"><figcaption><span class="tag">$ sudo nmap -sV -O</span> the hidden Linux target, showing the vsftpd, Ingreslock, Tomcat, and PostgreSQL services I assessed.</figcaption></figure>
     <figure class="shot"><img src="assets/screenshots/cybr4220/va-03-nmap-windows-2-sweep.jpg" alt="nmap network sweep and scan of a hidden Windows host" loading="lazy"><figcaption><span class="tag"># network sweep</span> a hidden Windows host caught mid-sweep before it dropped off the network.</figcaption></figure>
   </div>
-
   <div class="subhead">Server Hardening — Windows &amp; Linux</div>
   <p class="section-sub" style="margin-bottom:20px">The flip side of the assessment. Across the term I stood up and locked down a Windows Server 2022 host and an Ubuntu host, exposing only the required services (HTTPS, secure mail over SMTPS/IMAPS/POP3S, DNS, SSH, and PostgreSQL) and proving the state with scans from a separate Kali box. The goal every module was the same: nmap from the outside should show only what is supposed to be there, and nothing else.</p>
-
   <div class="duo">
     <div class="panel">
       <h3>Default-Deny Firewall</h3>
@@ -413,7 +377,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="tool-tags"><span class="tool-tag">AppArmor</span></div>
     </div>
   </div>
-
   <div class="shot-grid" style="margin-top:16px">
     <figure class="shot"><img src="assets/screenshots/cybr4220/sc-02-nmap-linux-server.jpg" alt="nmap scan of the hardened Linux server from Kali" loading="lazy"><figcaption><span class="tag">$ nmap -p- -v</span> my hardened Linux server from Kali. Only the intended services answer: SSH, DNS, HTTPS, secure mail, and PostgreSQL.</figcaption></figure>
     <figure class="shot"><img src="assets/screenshots/cybr4220/sc-01-nmap-windows-server.jpg" alt="nmap scan of the hardened Windows server from Kali" loading="lazy"><figcaption><span class="tag">$ nmap -p- -v</span> my hardened Windows server. The full port scan comes back to just DNS, HTTPS, and SMTPS.</figcaption></figure>
@@ -421,13 +384,11 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <figure class="shot"><img src="assets/screenshots/cybr4220/sc-04-apparmor-status.jpg" alt="AppArmor status showing loaded profiles in enforce mode" loading="lazy"><figcaption><span class="tag"># aa-status</span> AppArmor with 133 profiles loaded and 45 in enforce mode.</figcaption></figure>
   </div>
 </section>
-
 <section id="featured" class="wrap reveal">
   <div class="section-label">featured projects</div>
   <h2 class="section-title">Milestone Series</h2>
   <p class="section-sub">Three independent challenge projects from my Ethical Hacking coursework. Minimal instructions, research-driven solutions, verified results. Each links to a full case study.</p>
   <div class="featured-grid">
-
     <a class="feat-card" href="projects/milestone-1.html">
       <div class="feat-num">milestone_01</div>
       <h3>Forensic File Identification via Bulk MD5 Hashing</h3>
@@ -437,7 +398,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="tool-tags"><span class="tool-tag">Ubuntu</span><span class="tool-tag">md5sum</span><span class="tool-tag">grep</span></div>
       <span class="feat-cta">view case study →</span>
     </a>
-
     <a class="feat-card" href="projects/milestone-2.html">
       <div class="feat-num">milestone_02</div>
       <h3>RSA Decryption with OpenSSL &amp; OAEP Padding</h3>
@@ -447,7 +407,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="tool-tags"><span class="tool-tag">OpenSSL</span><span class="tool-tag">RSA</span><span class="tool-tag">OAEP</span></div>
       <span class="feat-cta">view case study →</span>
     </a>
-
     <a class="feat-card" href="projects/milestone-3.html">
       <div class="feat-num">milestone_03</div>
       <h3>AES-CBC Decryption via CyberChef</h3>
@@ -457,41 +416,26 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
       <div class="tool-tags"><span class="tool-tag">CyberChef</span><span class="tool-tag">AES-256-CBC</span></div>
       <span class="feat-cta">view case study →</span>
     </a>
-
   </div>
 </section>
-
 <section id="labs" class="wrap reveal">
   <div class="section-label">ethical hacking labs</div>
   <h2 class="section-title">Ethical Hacking — Kali Linux</h2>
   <p class="section-sub">Hands-on lab work covering reconnaissance, exploitation, post-exploitation, and detection evasion. Each lab below shows my own console output from the work.</p>
   <div class="lab-grid">
-
     <div class="lab-card"><div class="netlab">reconnaissance</div><h4>Reconnaissance with Nmap &amp; AMAP</h4><p>Full port scan with SYN/ACK inspection in Wireshark, version detection, AMAP service fingerprinting, and banner grabbing.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab1-000.jpg" alt="completed nmap scan showing open ports on the target" loading="lazy"><img src="assets/screenshots/labs/NetLab1-004.jpg" alt="nmap service and OS detection output" loading="lazy"></div><div class="cap">nmap port scan and service/OS detection against the lab target.</div><div class="tool-tags"><span class="tool-tag">Nmap</span><span class="tool-tag">AMAP</span></div></div>
-
     <div class="lab-card"><div class="netlab">exploitation</div><h4>Metasploit Exploitation</h4><p>Explored exploits and payloads, ran wmap web scanning, exploited TikiWiki, and established a Meterpreter reverse shell.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab_03-006.jpg" alt="live Meterpreter session opened against the TikiWiki target" loading="lazy"></div><div class="cap">A live Meterpreter session opened on the target after the TikiWiki exploit.</div><div class="notable">Opened a live Meterpreter session on target</div><div class="tool-tags"><span class="tool-tag">Metasploit</span><span class="tool-tag">wmap</span></div></div>
-
     <div class="lab-card"><div class="netlab">detection evasion</div><h4>IDS Evasion</h4><p>A standard Nmap scan was caught by Snorby; an evasion technique (--mtu 8) bypassed Sguil, demonstrated side by side.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab_16-002.jpg" alt="Snorby IDS detecting the standard nmap scan" loading="lazy"><img src="assets/screenshots/labs/NetLab_16-008.jpg" alt="Sguil console not detecting the evaded scan" loading="lazy"></div><div class="cap">Top: Snorby flags the standard scan. Bottom: the fragmented scan slips past Sguil.</div><div class="notable">Detected vs. evaded scans compared directly</div><div class="tool-tags"><span class="tool-tag">Nmap</span><span class="tool-tag">Snorby</span><span class="tool-tag">Sguil</span></div></div>
-
     <div class="lab-card"><div class="netlab">credentials</div><h4>Password Cracking</h4><p>Wordlist generation, shadow file extraction, hash identification, and cracking with two separate tools.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab_05-004.jpg" alt="John the Ripper recovering passwords from the hash file" loading="lazy"><img src="assets/screenshots/labs/NetLab_05-006.jpg" alt="Hashcat recovering passwords from the hash file" loading="lazy"></div><div class="cap">Recovering the lab's test-account passwords with John the Ripper and Hashcat.</div><div class="tool-tags"><span class="tool-tag">Crunch</span><span class="tool-tag">John the Ripper</span><span class="tool-tag">Hashcat</span></div></div>
-
     <div class="lab-card"><div class="netlab">web pentest</div><h4>Web Pentesting with Nikto &amp; ZAP</h4><p>HTTP options enumeration, client policy scan, and a full vulnerability scan with OWASP ZAP alert analysis.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab_04-006.jpg" alt="OWASP ZAP showing alerts found against the target web app" loading="lazy"></div><div class="cap">OWASP ZAP alerts surfaced after scanning the lab web application.</div><div class="tool-tags"><span class="tool-tag">Nikto</span><span class="tool-tag">OWASP ZAP</span></div></div>
-
     <div class="lab-card"><div class="netlab">enumeration</div><h4>SMB Enumeration</h4><p>Share enumeration, null session connection, and a brute-force credential attack against SMB.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab8-000.jpg" alt="enum4linux listing SMB shares on the target" loading="lazy"><img src="assets/screenshots/labs/NetLab8-004.jpg" alt="xHydra brute-force results against SMB" loading="lazy"></div><div class="cap">enum4linux share enumeration, then an xHydra brute force against SMB.</div><div class="tool-tags"><span class="tool-tag">enum4linux</span><span class="tool-tag">smbclient</span><span class="tool-tag">xHydra</span></div></div>
-
     <div class="lab-card"><div class="netlab">exploitation</div><h4>Buffer Overflows</h4><p>Compiled a vulnerable C program, triggered a buffer overrun, and confirmed the fix against a patched version.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab15-002.jpg" alt="buffer overrun triggered in the vulnerable C program" loading="lazy"><img src="assets/screenshots/labs/NetLab15-004.jpg" alt="patched program rejecting the oversized input" loading="lazy"></div><div class="cap">The overrun in the vulnerable build, then the patched build rejecting the same input.</div><div class="tool-tags"><span class="tool-tag">gcc</span><span class="tool-tag">C</span></div></div>
-
     <div class="lab-card"><div class="netlab">packet crafting</div><h4>Packet Crafting with Scapy</h4><p>TTL, source, and destination modification; TCP stack construction up the Ethernet layer; crafted ICMP packet to OWASP and a SYN scan.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab10-000.jpg" alt="Scapy session modifying packet TTL, source, and destination" loading="lazy"><img src="assets/screenshots/labs/NetLab10-008.jpg" alt="crafted ICMP packet sent with Scapy" loading="lazy"></div><div class="cap">Building and modifying packets in Scapy, then sending a crafted ICMP packet.</div><div class="tool-tags"><span class="tool-tag">Scapy</span><span class="tool-tag">Wireshark</span></div></div>
-
     <div class="lab-card"><div class="netlab">packet analysis</div><h4>Packet Analysis with hping3</h4><p>ICMP and timestamp modes, TTL manipulation, tcpdump capture and analysis, and port scanning.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab17-000.jpg" alt="hping3 ICMP mode results against the target" loading="lazy"></div><div class="cap">hping3 sending crafted ICMP probes and reading the responses.</div><div class="tool-tags"><span class="tool-tag">hping3</span><span class="tool-tag">tcpdump</span></div></div>
-
     <div class="lab-card"><div class="netlab">social engineering</div><h4>Social Engineering Toolkit</h4><p>Stood up a credential harvester on Apache with SET and worked through the harvester output on the web server.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab2-004.jpg" alt="SET web attack menu and harvester files on the Apache server" loading="lazy"></div><div class="cap">Working through the SET web-attack harvester setup on the Apache host.</div><div class="tool-tags"><span class="tool-tag">SET</span><span class="tool-tag">Apache</span></div></div>
-
     <div class="lab-card"><div class="netlab">auditing</div><h4>Linux Auditing with Lynis</h4><p>Ran a system audit, reviewed available tests, and analyzed log-based security suggestions.</p><div class="lab-shots"><img src="assets/screenshots/labs/NetLab_19-002.jpg" alt="Lynis audit suggestions from the system log" loading="lazy"></div><div class="cap">Lynis hardening suggestions pulled from the audit log.</div><div class="tool-tags"><span class="tool-tag">Lynis</span></div></div>
-
   </div>
 </section>
-
 <section id="forensics" class="wrap reveal">
   <div class="section-label">digital forensics</div>
   <h2 class="section-title">Disk &amp; Image Analysis</h2>
@@ -521,7 +465,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     </div>
   </div>
 </section>
-
 <section id="linux" class="wrap reveal">
   <div class="section-label">linux administration</div>
   <h2 class="section-title">System Administration</h2>
@@ -535,7 +478,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <div class="linux-item"><div class="lab-id">storage</div><h4>Storage Management</h4><p>fdisk, virtual disk creation, partitioning, formatting.</p></div>
   </div>
 </section>
-
 <section id="networking" class="wrap reveal">
   <div class="section-label">networking</div>
   <h2 class="section-title">Network Packet Analysis</h2>
@@ -559,80 +501,67 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     </div>
   </div>
 </section>
-
 <section id="scripts" class="wrap reveal">
   <div class="section-label">scripts &amp; automation</div>
   <h2 class="section-title">Python</h2>
   <p class="section-sub">Programming coursework with security-relevant logic: tiered conditional processing, account lifecycle management, and data processing.</p>
-
   <div class="script-block">
     <div class="script-head"><div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div><span class="fname">tax_calculator.py</span><span class="tag">Tiered Income Tax Calculator</span></div>
     <img class="code-img" src="assets/code/img/tax_calculator.png" alt="tax_calculator.py source code" loading="lazy">
     <div class="script-desc"><span class="sec">// concepts</span> &nbsp;Tiered tax brackets, conditional logic, type-aware input handling, and a marital deduction.</div>
   </div>
-
   <div class="script-block">
     <div class="script-head"><div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div><span class="fname">user_manager.py</span><span class="tag">File-Based User Management</span></div>
     <img class="code-img" src="assets/code/img/user_manager.png" alt="user_manager.py source code" loading="lazy">
     <div class="script-desc"><span class="sec">// security relevance</span> &nbsp;CRUD operations modeling user account lifecycle management against a flat-file store.</div>
   </div>
-
   <div class="script-block">
     <div class="script-head"><div class="dots"><span class="r"></span><span class="y"></span><span class="g"></span></div><span class="fname">array_merge_sort.py</span><span class="tag">Array Merge &amp; Sort</span></div>
     <img class="code-img" src="assets/code/img/array_merge_sort.png" alt="array_merge_sort.py source code" loading="lazy">
     <div class="script-desc"><span class="sec">// concepts</span> &nbsp;Set-based deduplication and a hand-implemented bubble sort.</div>
   </div>
 </section>
-
 <section id="writing" class="wrap reveal">
   <div class="section-label">written work &amp; analysis</div>
   <h2 class="section-title">Research, Analysis &amp; Acquisition</h2>
   <p class="section-sub">Primary-source technical writing and project analysis: connecting software defects and architecture to real-world outcomes, and evaluating how IT projects are scoped, sourced, and run.</p>
   <div class="writing-grid">
-
     <div class="write-card">
       <h3>HealthCare.gov Failure Analysis</h3>
       <div class="course">Software Acquisition</div>
       <p>Case study of why the federal HealthCare.gov rollout failed: no single accountable project leader, requirements delivered to contractors far too late, cost-reimbursable contracts that ran the estimate from $292M to $2.1B, and untested-at-scale technology that collapsed on launch day.</p>
       <div class="sources">sources: Lee &amp; Brumer · GAO / Levinson</div>
     </div>
-
     <div class="write-card">
       <h3>RFP Evaluation &amp; Recommendations</h3>
       <div class="course">Software Acquisition</div>
       <p>Evaluated a public augmented-reality app RFP, identified gaps a vendor could not price accurately (missing hosting, data security, OS support, and branding requirements; ambiguous contract scope), and recommended a technical requirements section and clearer post-warranty terms.</p>
     </div>
-
     <div class="write-card">
       <h3>Zero Trust Architecture</h3>
       <div class="course">Network Security</div>
       <p>Full essay on never-trust/assume-breach principles, the policy engine/administrator/enforcement point model, IAM and MFA, non-person-entity risks, and CIA triad extensions.</p>
       <div class="sources">sources: NSA CSI · NIST SP 800-207</div>
     </div>
-
     <div class="write-card">
       <div class="cve">CVE-2022-37418</div>
       <h3>RKE Rollback Attack on Key Fobs</h3>
       <div class="course">Software Assurance</div>
       <p>Analysis of the RollBack replay attack against Nissan, Kia, and Hyundai key fobs: capturing two consecutive valid key fob signals and replaying them to force the receiver to resynchronize, re-enabling the captured codes.</p>
     </div>
-
     <div class="write-card">
       <div class="cve">CVE-2021-44228</div>
       <h3>Log4Shell — TryHackMe Lab</h3>
       <div class="course">Software Assurance</div>
       <p>Completed antivirus-detection and Log4j exploitation labs on TryHackMe, with written analysis of defensive recommendations.</p>
     </div>
-
     <div class="write-card">
       <h3>Disaster Recovery Plan</h3>
       <div class="course">Incident Response &amp; DR</div>
       <p>A complete disaster recovery plan for a mock organization, with response and recovery procedures across five disaster scenarios: hurricane, tornado, earthquake, flood, and fire.</p>
     </div>
-
   </div>
 </section>
-
 <section id="skills" class="wrap reveal">
   <div class="section-label">skills</div>
   <h2 class="section-title">Toolset</h2>
@@ -656,7 +585,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap foot-inner">
     <div class="foot-term"><span class="green">stallings@sec</span>:~$ ./contact.sh</div>
@@ -667,7 +595,6 @@ footer{border-top:1px solid var(--border);padding:50px 0 40px;position:relative;
     <div class="foot-copy">© 2026 Steven Stallings · Seattle, WA · built with HTML, CSS &amp; zero trust</div>
   </div>
 </footer>
-
 <script>
   function closeNav(){document.getElementById('navlinks').classList.remove('open');}
   const obs=new IntersectionObserver((entries)=>{
